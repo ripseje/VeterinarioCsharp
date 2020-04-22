@@ -13,6 +13,7 @@ namespace VeterinarioBasico
     public partial class LoginEmpleados : Form
     {
         Conexion conexion = new Conexion();
+        public string dev = "";
         public LoginEmpleados()
         {
             InitializeComponent();
@@ -22,9 +23,9 @@ namespace VeterinarioBasico
         {
             if (conexion.loginEmpleado(loginUsuario.Text, loginPass.Text) != "error de usuario/contraseña")
             {
-                Form1 v = new Form1();
+                FormEmpleado v = new FormEmpleado();
+                MessageBox.Show(loginUsuario.Text);
                 v.Show();
-                this.Hide();
             }
             else
             {

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -58,6 +59,7 @@ namespace VeterinarioBasico
                 if (resultado.Read())
                 {
                     return resultado.GetString(0);
+                    
                 }
 
                 conexion.Close();
@@ -66,6 +68,25 @@ namespace VeterinarioBasico
             catch (MySqlException e)
             {
                 return "error de try";
+            }
+        }
+
+        public DataTable getData(String id)
+        {
+            try
+            {
+                conexion.Open();
+                MySqlCommand consulta =
+                    new MySqlCommand("SELECT * FROM empleado WHERE usuario ='" + id + "'", conexion);
+                MySqlDataReader resultado = consulta.ExecuteReader();
+                DataTable empleaux = new DataTable();
+                empleaux.Load(resultado);
+                conexion.Close();
+                return empleaux;
+            }
+            catch (MySqlException e)
+            {
+                throw e;
             }
         }
 
