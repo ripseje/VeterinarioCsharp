@@ -109,5 +109,24 @@ namespace VeterinarioBasico
             }
         }
 
+        public DataTable getMascotas()
+        {
+            try
+            {
+                conexion.Open();
+                MySqlCommand consulta =
+                    new MySqlCommand("SELECT * FROM mascota ", conexion);
+                MySqlDataReader resultado = consulta.ExecuteReader();
+                DataTable empleaux = new DataTable();
+                empleaux.Load(resultado);
+                conexion.Close();
+                return empleaux;
+            }
+            catch (MySqlException e)
+            {
+                throw e;
+            }
+        }
+
     }
 }

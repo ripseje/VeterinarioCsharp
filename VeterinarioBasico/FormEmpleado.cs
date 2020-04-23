@@ -24,6 +24,8 @@ namespace VeterinarioBasico
             InitializeComponent();
             miConexion.getCitas();
             dataGridView.DataSource = miConexion.getCitas();
+            miConexion.getMascotas();
+            dataGridView1.DataSource = miConexion.getMascotas();
         }
 
         public void perfil(String nombre)
@@ -53,7 +55,39 @@ namespace VeterinarioBasico
 
         private void dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            ccLabel.Text = dataGridView.Rows[e.RowIndex].Cells["cod_cita"].Value.ToString();
+            fhLabel.Text = dataGridView.Rows[e.RowIndex].Cells["fecha"].Value.ToString();
+            label12.Text = dataGridView.Rows[e.RowIndex].Cells["hora"].Value.ToString();
+            idLabel.Text = dataGridView.Rows[e.RowIndex].Cells["id_empleado"].Value.ToString();
+            id_dniLabel.Text = dataGridView.Rows[e.RowIndex].Cells["id_dni"].Value.ToString();
+            textoMotivo.Text = dataGridView.Rows[e.RowIndex].Cells["motivo"].Value.ToString();
+        }
 
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            id_label.Text = dataGridView1.Rows[e.RowIndex].Cells["id_mascota"].Value.ToString();
+            especielabel.Text = dataGridView1.Rows[e.RowIndex].Cells["especie"].Value.ToString();
+            nombrelabel.Text = dataGridView1.Rows[e.RowIndex].Cells["nombre"].Value.ToString();
+            edadLabel.Text = dataGridView1.Rows[e.RowIndex].Cells["edad"].Value.ToString();
+            pesoLabel.Text = dataGridView1.Rows[e.RowIndex].Cells["peso"].Value.ToString();
+            alturaLabel.Text = dataGridView1.Rows[e.RowIndex].Cells["altura"].Value.ToString();
+            if (dataGridView1.Rows[e.RowIndex].Cells["vacunado"].Value.ToString().Equals("False"))
+            {
+                vacunadoLabel.Text = "No";
+            }
+            else
+            {
+                vacunadoLabel.Text = "Si";
+            }
+            
+            /*try
+            {
+                fotoMascota.Image = convierteBlobAImagen((byte[])dataGridView1.Rows[e.RowIndex].Cells["motivo"].Value);
+            }
+            catch(Exception o)
+            {
+                throw o;
+            }*/
         }
     }
 }
