@@ -86,6 +86,7 @@
             this.buttonLogin.Text = "Login";
             this.buttonLogin.UseVisualStyleBackColor = true;
             this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
+            this.buttonLogin.Enter += new System.EventHandler(this.buttonLogin_Click);
             // 
             // LoginEmpleados
             // 
@@ -110,9 +111,9 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox loginUsuario;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox loginPass;
         private System.Windows.Forms.Button buttonLogin;
+        public System.Windows.Forms.TextBox loginUsuario;
     }
 }

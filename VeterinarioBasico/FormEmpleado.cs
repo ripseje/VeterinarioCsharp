@@ -17,31 +17,43 @@ namespace VeterinarioBasico
 
         Conexion miConexion = new Conexion();
         public DataTable datosEmpleado = new DataTable();
-        public LoginEmpleados login = new LoginEmpleados();
         public String devolucion = "";
 
         public FormEmpleado()
         {
             InitializeComponent();
-            perfil();
-            
+            miConexion.getCitas();
+            dataGridView.DataSource = miConexion.getCitas();
         }
 
-        public void perfil()
+        public void perfil(String nombre)
         {
-            /*devolucion = login.funciona();
-            MessageBox.Show(devolucion);
-            datosEmpleado = miConexion.getData(devolucion);
+            /*LoginEmpleados log = new LoginEmpleados();
+            MessageBox.Show(log.nombre);*/
+            datosEmpleado = miConexion.getData(nombre);
             label2.Text = datosEmpleado.Rows[0]["nombre"].ToString();
             label4.Text = datosEmpleado.Rows[0]["apellido"].ToString();
             user.Text = datosEmpleado.Rows[0]["usuario"].ToString();
             idEmpleado.Text = datosEmpleado.Rows[0]["id_empleado"].ToString();
-            //imagenEmpleado.Image = convierteBlobAImagen((byte[])datosEmpleado.Rows[0]["img_perfil"]);
+            try
+            {
+                imagenEmpleado.Image = convierteBlobAImagen((byte[])datosEmpleado.Rows[0]["img_perfil"]);
+            }
+            catch (Exception e)
+            {
+
+            }
         }
         private Image convierteBlobAImagen(byte[] img)
         {
             MemoryStream ms = new System.IO.MemoryStream(img);
-            return (Image.FromStream(ms));*/
+            return (Image.FromStream(ms));
+        }
+
+
+        private void dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

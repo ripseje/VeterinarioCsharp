@@ -90,5 +90,24 @@ namespace VeterinarioBasico
             }
         }
 
+        public DataTable getCitas()
+        {
+            try
+            {
+                conexion.Open();
+                MySqlCommand consulta =
+                    new MySqlCommand("SELECT * FROM citas ", conexion);
+                MySqlDataReader resultado = consulta.ExecuteReader();
+                DataTable empleaux = new DataTable();
+                empleaux.Load(resultado);
+                conexion.Close();
+                return empleaux;
+            }
+            catch (MySqlException e)
+            {
+                throw e;
+            }
+        }
+
     }
 }

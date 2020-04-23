@@ -19,19 +19,27 @@ namespace VeterinarioBasico
             InitializeComponent();
         }
 
-        private void buttonLogin_Click(object sender, EventArgs e)
+        public void buttonLogin_Click(object sender, EventArgs e)
         {
             if (conexion.loginEmpleado(loginUsuario.Text, loginPass.Text) != "error de usuario/contraseña")
             {
+                dev = loginUsuario.Text;
+                MessageBox.Show(dev);
                 FormEmpleado v = new FormEmpleado();
-                MessageBox.Show(loginUsuario.Text);
+                v.perfil(dev);
                 v.Show();
+                this.Hide();
             }
             else
             {
                 String Resultado = conexion.loginVeterinario(loginUsuario.Text, loginPass.Text);
                 MessageBox.Show(Resultado);
             }
+        }
+
+        public String nombre
+        {
+            get { return dev; }
         }
     }
 }
