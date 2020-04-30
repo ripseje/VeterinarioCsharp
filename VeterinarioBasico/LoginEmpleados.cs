@@ -17,6 +17,7 @@ namespace VeterinarioBasico
         public LoginEmpleados()
         {
             InitializeComponent();
+            loginPass.PasswordChar = '*';
         }
 
         public void buttonLogin_Click(object sender, EventArgs e)
@@ -24,7 +25,7 @@ namespace VeterinarioBasico
             if (conexion.loginEmpleado(loginUsuario.Text, loginPass.Text) != "error de usuario/contraseña")
             {
                 dev = loginUsuario.Text;
-                MessageBox.Show(dev);
+                MessageBox.Show("Bienvenido al sistema " + dev + "!");
                 FormEmpleado v = new FormEmpleado();
                 v.perfil(dev);
                 v.Show();
