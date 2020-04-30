@@ -35,6 +35,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.loginPass = new System.Windows.Forms.TextBox();
             this.buttonLogin = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,7 +90,7 @@
             this.buttonLogin.FlatAppearance.BorderSize = 0;
             this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLogin.Location = new System.Drawing.Point(122, 385);
+            this.buttonLogin.Location = new System.Drawing.Point(122, 360);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(87, 37);
             this.buttonLogin.TabIndex = 6;
@@ -98,12 +99,28 @@
             this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             this.buttonLogin.Enter += new System.EventHandler(this.buttonLogin_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Aquamarine;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(70, 403);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(197, 37);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Volver a Login Cliente";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // LoginEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(343, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonLogin);
             this.Controls.Add(this.loginPass);
             this.Controls.Add(this.label2);
@@ -128,5 +145,6 @@
         private System.Windows.Forms.TextBox loginPass;
         private System.Windows.Forms.Button buttonLogin;
         public System.Windows.Forms.TextBox loginUsuario;
+        private System.Windows.Forms.Button button1;
     }
 }

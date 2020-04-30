@@ -20,6 +20,7 @@ namespace VeterinarioBasico
             loginPass.PasswordChar = '*';
         }
 
+        //Cambia al form del empleado
         public void buttonLogin_Click(object sender, EventArgs e)
         {
             if (conexion.loginEmpleado(loginUsuario.Text, loginPass.Text) != "error de usuario/contraseña")
@@ -38,9 +39,12 @@ namespace VeterinarioBasico
             }
         }
 
-        public String nombre
+        //Cambia a ventana login del cliente
+        private void button1_Click(object sender, EventArgs e)
         {
-            get { return dev; }
+            VentanaLogin v = new VentanaLogin();
+            v.Show();
+            this.Hide();
         }
     }
 }

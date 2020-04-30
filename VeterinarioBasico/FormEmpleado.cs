@@ -28,6 +28,7 @@ namespace VeterinarioBasico
         public FormEmpleado()
         {
             InitializeComponent();
+            //Cargar datos en DataGridViews
             miConexion.getCitas();
             dataGridView.DataSource = miConexion.getCitas();
             miConexion.getMascotas();
@@ -40,9 +41,10 @@ namespace VeterinarioBasico
             
         }
 
+        //Carga los datos desde la base de datos al perfíl del empleado e inicia el método de creación de los panels
+        //con los datos de sus citas asignadas
         public void perfil(String nombre)
         {
-            
             datosEmpleado = miConexion.getData(nombre);
             label15.Text = datosEmpleado.Rows[0]["nombre"].ToString();
             label14.Text = datosEmpleado.Rows[0]["apellido"].ToString();
@@ -58,13 +60,15 @@ namespace VeterinarioBasico
             }
             pruebaCitasEmpleado(datosEmpleado.Rows[0]["id_empleado"].ToString());
         }
+
+        //Convierte blob de la base de datos a imagen
         private Image convierteBlobAImagen(byte[] img)
         {
             MemoryStream ms = new System.IO.MemoryStream(img);
             return (Image.FromStream(ms));
         }
 
-
+        //Carga los datos de la fila seleccionada en "ver más de citas"
         private void dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             ccLabel.Text = dataGridView.Rows[e.RowIndex].Cells["cod_cita"].Value.ToString();
@@ -75,6 +79,7 @@ namespace VeterinarioBasico
             textoMotivo.Text = dataGridView.Rows[e.RowIndex].Cells["motivo"].Value.ToString();
         }
 
+        //Carga los datos de la fila seleccionada en "ver más de mascotas"
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             id_label.Text = dataGridView1.Rows[e.RowIndex].Cells["id_mascota"].Value.ToString();
@@ -95,6 +100,7 @@ namespace VeterinarioBasico
             fotoMascota.Image = convierteBlobAImagen((byte[])imagenMascota.Rows[0]["imagenMascota"]);
         }
 
+        //Carga los datos de la fila seleccionada en "ver más de clientes"
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             dniCliente.Text = dataGridView2.Rows[e.RowIndex].Cells["id_dni"].Value.ToString();
@@ -109,6 +115,7 @@ namespace VeterinarioBasico
             }
         }
 
+        //Método para buscar una mascota y los datos salen en el panel de "ver mas de mascota"
         private void busquedaMascotaButton(object sender, EventArgs e)
         {
             if (miConexion.compruebaMascota(busquedaMascotas.Text))
@@ -137,6 +144,7 @@ namespace VeterinarioBasico
 
         }
 
+        //Método para buscar una mascota y los datos salen en el panel de "ver mas de mascota"
         private void busquedaCita(object sender, EventArgs e)
         {
             if (miConexion.compruebaCita(busquedaCitaTextBox.Text))
@@ -156,7 +164,8 @@ namespace VeterinarioBasico
             
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        //Método para buscar una cita y los datos salen en el panel de "ver mas de citas"
+        private void buscarCitaBoton(object sender, EventArgs e)
         {
             cliente = miConexion.getClienteBusqueda(buscadorClienteTextBox.Text);
             dniCliente.Text = cliente.Rows[0]["id_dni"].ToString();
@@ -171,7 +180,7 @@ namespace VeterinarioBasico
             }
         }
 
-
+        //Metodo para generar automaticamente los paneles con la información de las citas asignadas al empleado logeado
         public void pruebaCitasEmpleado(String user)
         {
             citasEmpleado = miConexion.getCitasDelEmpleado(user);

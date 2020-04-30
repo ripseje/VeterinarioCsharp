@@ -35,6 +35,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.panelCitas = new System.Windows.Forms.Panel();
             this.idEmpleado = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.user = new System.Windows.Forms.Label();
@@ -97,7 +98,6 @@
             this.dniCliente = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.panelCitas = new System.Windows.Forms.Panel();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.tabControl1.SuspendLayout();
             this.areaEmpleado.SuspendLayout();
@@ -132,7 +132,7 @@
             // 
             // areaEmpleado
             // 
-            this.areaEmpleado.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.areaEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
             this.areaEmpleado.Controls.Add(this.label15);
             this.areaEmpleado.Controls.Add(this.label14);
             this.areaEmpleado.Controls.Add(this.label9);
@@ -184,6 +184,16 @@
             this.label9.Size = new System.Drawing.Size(82, 20);
             this.label9.TabIndex = 12;
             this.label9.Text = "Mis Citas";
+            // 
+            // panelCitas
+            // 
+            this.panelCitas.AutoScroll = true;
+            this.panelCitas.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panelCitas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelCitas.Location = new System.Drawing.Point(41, 41);
+            this.panelCitas.Name = "panelCitas";
+            this.panelCitas.Size = new System.Drawing.Size(504, 512);
+            this.panelCitas.TabIndex = 11;
             // 
             // idEmpleado
             // 
@@ -282,7 +292,7 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
             this.tabPage2.Controls.Add(this.button2);
             this.tabPage2.Controls.Add(this.busquedaCitaTextBox);
             this.tabPage2.Controls.Add(this.panelDetalles);
@@ -319,7 +329,7 @@
             // 
             // panelDetalles
             // 
-            this.panelDetalles.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panelDetalles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
             this.panelDetalles.Controls.Add(this.label8);
             this.panelDetalles.Controls.Add(this.textoMotivo);
             this.panelDetalles.Controls.Add(this.id_dniLabel);
@@ -454,7 +464,7 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
             this.tabPage3.Controls.Add(this.busquedaMascotas);
             this.tabPage3.Controls.Add(this.button1);
             this.tabPage3.Controls.Add(this.panel1);
@@ -491,7 +501,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
             this.panel1.Controls.Add(this.vacunadoLabel);
             this.panel1.Controls.Add(this.fotoMascota);
             this.panel1.Controls.Add(this.pesoLabel);
@@ -671,7 +681,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
             this.tabPage1.Controls.Add(this.buscadorClienteTextBox);
             this.tabPage1.Controls.Add(this.button3);
             this.tabPage1.Controls.Add(this.panel2);
@@ -704,11 +714,11 @@
             this.button3.TabIndex = 4;
             this.button3.Text = "Buscar: ";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button3.Click += new System.EventHandler(this.buscarCitaBoton);
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
             this.panel2.Controls.Add(this.imagenCliente);
             this.panel2.Controls.Add(this.nombreCliente);
             this.panel2.Controls.Add(this.label23);
@@ -842,16 +852,6 @@
             this.dataGridView2.Size = new System.Drawing.Size(522, 555);
             this.dataGridView2.TabIndex = 2;
             this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
-            // 
-            // panelCitas
-            // 
-            this.panelCitas.AutoScroll = true;
-            this.panelCitas.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panelCitas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panelCitas.Location = new System.Drawing.Point(41, 41);
-            this.panelCitas.Name = "panelCitas";
-            this.panelCitas.Size = new System.Drawing.Size(504, 512);
-            this.panelCitas.TabIndex = 11;
             // 
             // imageList1
             // 
