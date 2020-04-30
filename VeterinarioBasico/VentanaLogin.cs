@@ -23,7 +23,7 @@ namespace VeterinarioBasico
             if (conexion.loginVeterinario(loginCorreo.Text, loginPwd.Text) != "error de usuario/contraseña")
             {
                 this.Hide();
-                Form1 v = new Form1();
+                FormClientes v = new FormClientes();
                 v.Show();
                 
             }
