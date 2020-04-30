@@ -69,11 +69,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Registro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Registro.Designer.cs">
+      <DependentUpon>Registro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormClientes.Designer.cs">
+      <DependentUpon>FormClientes.cs</DependentUpon>
     </Compile>
     <Compile Include="FormEmpleado.cs">
       <SubType>Form</SubType>
@@ -95,8 +101,11 @@
     <Compile Include="VentanaLogin.Designer.cs">
       <DependentUpon>VentanaLogin.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Registro.resx">
+      <DependentUpon>Registro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormClientes.resx">
+      <DependentUpon>FormClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormEmpleado.resx">
       <DependentUpon>FormEmpleado.cs</DependentUpon>
